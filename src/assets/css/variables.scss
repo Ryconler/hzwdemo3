@@ -1,0 +1,61 @@
+@use 'sass:math';
+
+@mixin ellicpsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+@mixin ellicpsisN($lineCount) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lineCount;
+}
+
+@mixin _prefixDpr(
+  $width: 1px,
+  $position: all,
+  $color: #e8e8e8,
+  $radius: 0,
+  $style: solid,
+  $dpr: 2
+) {
+  @media only screen and (-webkit-min-device-pixel-ratio: $dpr) {
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: $dpr * 100%;
+      height: $dpr * 100%;
+      transform: scale(math.div(1, $dpr));
+      transform-origin: left top;
+      @if $position == all {
+        border: $width $style $color;
+      } @else {
+        border-#{$position}: $width $style $color;
+      }
+      border-radius: $radius * 2;
+      pointer-events: none;
+    }
+  }
+}
+
+@mixin border(
+  $position: all,
+  $color: #eee,
+  $width: 1px,
+  $radius: 0,
+  $style: solid
+) {
+  position: relative;
+  border-radius: $radius;
+  @include _prefixDpr($width, $position, $color, $radius, $style, 1);
+  @include _prefixDpr($width, $position, $color, $radius, $style, 1.5);
+  @include _prefixDpr($width, $position, $color, $radius, $style, 2);
+  @include _prefixDpr($width, $position, $color, $radius, $style, 3);
+}

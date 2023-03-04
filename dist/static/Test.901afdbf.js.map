@@ -1,0 +1,1 @@
+{"version":3,"file":"Test.901afdbf.js","sources":["../../src/views/test/Test.vue"],"sourcesContent":["<template>\n  <div>test</div>\n</template>\n<script lang=\"ts\" setup>\nimport { useRoute } from 'vue-router'\n\nconst route = useRoute()\n\nconsole.log(route.query.q1)\n</script>\n"],"names":["route","useRoute"],"mappings":"+FAMA,MAAAA,EAAAC,IAEA,eAAA,IAAAD,EAAA,MAAA,EAAA"}

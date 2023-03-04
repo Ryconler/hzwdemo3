@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="author" content="Jesse,JesseZhu,朱星杰" />
+    <meta name="description" content="我找木小先，JesseZhu的个人网站" />
+    <meta name="keywords" content="Jesse,JesseZhu,朱星杰,木小先" />
+    <meta name="robots" content="all" />
+    <title>我找木小先</title>
+    <link rel="icon" href="/hzwdemo3/favicon.ico" />
+
+    <style>
+      /*兼容iphoneX 底部 全局样式*/
+      @supports (bottom: constant(safe-area-inset-bottom)) or
+        (bottom: env(safe-area-inset-bottom)) {
+        .menu_wkBox_back_box {
+          padding-bottom: constant(safe-area-inset-bottom);
+          padding-bottom: env(safe-area-inset-bottom);
+        }
+      }
+      html,
+      body {
+        background: #f5f5f5;
+      }
+      #app {
+        max-width: 10rem;
+        margin: 0 auto;
+      }
+    </style>
+    <script>
+      ;(function flexible(window, document) {
+        function setRemUnit() {
+          var rem = document.documentElement.clientWidth / 10
+          // 给一个最大值
+          if (rem > 60) rem = 60
+          document.documentElement.style.fontSize = rem + 'px'
+        }
+        setRemUnit()
+        window.addEventListener('resize', setRemUnit)
+      })(window, document)
+    </script>
+    <script type="module" crossorigin src="/hzwdemo3/static/index.18b16d2b.js"></script>
+    <link rel="stylesheet" href="/hzwdemo3/static/index.ec888d24.css">
+    <script type="module">try{import("_").catch(()=>1);}catch(e){}window.__vite_is_dynamic_import_support=true;</script>
+    <script type="module">!function(){if(window.__vite_is_dynamic_import_support)return;console.warn("vite: loading legacy build because dynamic import is unsupported, syntax error above should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      ;(function () {
+        var os = {}
+        var ua = navigator.userAgent
+        //wechat
+        var wechat = ua.match(/(MicroMessenger)\/([\d\.]+)/i)
+        if (wechat) {
+          os.wechat = {
+            version: wechat[2].replace(/_/g, '.')
+          }
+        }
+        //android
+        var android = ua.match(/(Android);?[\s\/]+([\d.]+)?/)
+        if (android) {
+          os.android = true
+          os.version = android[2]
+          os.isBadAndroid = !/Chrome\/\d/.test(window.navigator.appVersion)
+        }
+        //ios
+        var iphone = ua.match(/(iPhone\sOS)\s([\d_]+)/)
+        var ipad = ua.match(/(iPad).*OS\s([\d_]+)/)
+        if (iphone) {
+          os.ios = os.iphone = true
+          os.version = iphone[2].replace(/_/g, '.')
+        } else if (ipad) {
+          os.ios = os.ipad = true
+          os.version = ipad[2].replace(/_/g, '.')
+        }
+        document.body.classList.add(os.ios ? 'y-e-ios' : 'y-e-android')
+        os.wechat && document.body.classList.add('y-e-wechat')
+      })()
+    </script>
+    
+    <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+    <script nomodule id="vite-legacy-polyfill" src="/hzwdemo3/static/polyfills-legacy.83e76867.js"></script>
+    <script nomodule id="vite-legacy-entry" data-src="/hzwdemo3/static/index-legacy.2688a4f5.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+  </body>
+</html>

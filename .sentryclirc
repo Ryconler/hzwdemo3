@@ -1,0 +1,8 @@
+[defaults]
+url=http://trapneibu.haiziwang.com/
+
+[auth]
+token=1ac271aa98d34d4ca343549dcecebb430ea01505909741ceb83e651d1291db47
+
+[update]
+disable_check=true

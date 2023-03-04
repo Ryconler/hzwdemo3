@@ -1,0 +1,57 @@
+{
+  "name": "hzwdemo3",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "node -v & vite build",
+    "build-dev": "vite build --base=/",
+    "preview": "vite preview --base=/ --host",
+    "lint": "eslint . --ext .vue,.js,.ts --ignore-path .gitignore",
+    "lint-fix": "eslint . --ext .vue,.js,.ts --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@sentry/tracing": "^7.6.0",
+    "@sentry/vue": "^7.6.0",
+    "axios": "^0.27.2",
+    "clipboard": "^2.0.11",
+    "core-js": "^3.23.4",
+    "js-cookie": "^3.0.1",
+    "load-script": "^2.0.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "pinia": "^2.0.15",
+    "query-string": "^7.1.1",
+    "vant": "^3.5.2",
+    "vconsole": "^3.14.6",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.2",
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "@vitejs/plugin-legacy": "^1.8.2",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.2.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "postcss-pxtorem": "^6.0.0",
+    "prettier": "^2.7.1",
+    "sass": "^1.53.0",
+    "typescript": "^4.7.4",
+    "unplugin-vue-components": "^0.21.1",
+    "vite": "^2.9.14",
+    "vue-tsc": "^0.38.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "npm run lint"
+    ]
+  }
+}
